@@ -1,6 +1,6 @@
 {
   "name": "sert-schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple javascript assertions for business logic and unit tests, including json-schema validation",
   "main": "lib/index.js",
   "files": [
