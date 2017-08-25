@@ -61,14 +61,9 @@
     },
     "globals": {
         "__dirname": false,
-        "after": false, // mocha tests
-        "before": false, // mocha tests
         "clearInterval": false,
         "clearTimeout": false,
         "console": false,
-        "describe": false, // mocha tests
-        "expect": false, // mocha tests
-        "it": false, // mocha tests
         "module": false,
         "process": false,
         "Promise": false,

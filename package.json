@@ -7,8 +7,9 @@
     "lib"
   ],
   "scripts": {
-    "test": "npm run test:mocha && npm run test:eslint",
-    "test:mocha": "NODE_PATH=. mocha -S --compilers js:babel-register --timeout 8000 \"src/**/*.tests.js\"",
+    "test": "npm run test:ava && npm run test:eslint",
+    "test:ava": "NODE_PATH=. ava \"src/**/_tests/*.test.js\" --timeout=10s",
+    "test:ava:watch": "NODE_PATH=. ava \"src/**/_tests/*.test.js\" --watch --timeout=10s",
     "test:eslint": "NODE_PATH=. eslint .",
     "compile": "babel src --out-dir lib",
     "clean": "rimraf lib",
@@ -25,22 +26,31 @@
   "bugs": {
     "url": "https://github.com/henit/sert-schema/issues"
   },
+  "ava": {
+    "require": [
+      "babel-register",
+      "regenerator-runtime/runtime",
+      "core-js/fn/object/values"
+    ],
+    "babel": "inherit",
+    "failWithoutAssertions": false
+  },
   "homepage": "https://github.com/henit/sert-schema#readme",
   "devDependencies": {
+    "ava": "^0.22.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-register": "^6.24.1",
-    "chai": "^4.1.1",
     "eslint": "^4.4.1",
-    "mocha": "^3.5.0",
     "rimraf": "^2.6.1",
     "testdata": "^0.1.4"
   },
   "dependencies": {
     "core-js": "^2.5.0",
+    "regenerator-runtime": "^0.11.0",
     "sert": "^0.2.3",
     "tv4": "^1.3.0"
   }
